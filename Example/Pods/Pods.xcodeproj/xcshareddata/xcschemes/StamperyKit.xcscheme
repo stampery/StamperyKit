@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '86E0CCAE4EECB3070883C232'
+               BlueprintIdentifier = '6434167779ACB14C7EE606E2'
                BlueprintName = 'StamperyKit'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'StamperyKit.framework'>

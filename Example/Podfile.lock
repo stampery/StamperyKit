@@ -21,7 +21,7 @@ PODS:
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
   - SSKeychain (1.2.3)
-  - StamperyKit (0.1.0):
+  - StamperyKit (0.1.1):
     - AFNetworking (~> 2.3)
     - SSKeychain
 
@@ -35,6 +35,6 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
   SSKeychain: 3f42991739c6c60a9cf1bbd4dff6c0d3694bcf3d
-  StamperyKit: 4df2711df202791b459d4bb542d4bac4c5554958
+  StamperyKit: b14fcec7d050acfe9b7f157a14bcf1a5b8bc035a
 
 COCOAPODS: 0.39.0

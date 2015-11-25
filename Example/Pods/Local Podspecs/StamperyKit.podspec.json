@@ -1,6 +1,6 @@
 {
   "name": "StamperyKit",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "summary": "Stampery's Cocoa Library",
   "description": "This is Stampery's Official Cocoa library.",
   "homepage": "https://github.com/stampery/StamperyKit",
@@ -10,7 +10,7 @@
   },
   "source": {
     "git": "https://github.com/stampery/StamperyKit.git",
-    "tag": "0.1.0"
+    "tag": "0.1.1"
   },
   "social_media_url": "https://twitter.com/StamperyCo",
   "platforms": {
@@ -23,6 +23,7 @@
       "Pod/Assets/*.png"
     ]
   },
+  "public_header_files": "Pod/Classes/**/*.h",
   "dependencies": {
     "AFNetworking": [
       "~> 2.3"

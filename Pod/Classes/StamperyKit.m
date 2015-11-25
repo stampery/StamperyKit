@@ -103,8 +103,18 @@
 //
 -(void) detailsForStampHash:(NSString*) fileHash completion:(void (^)(id response))completionBlock errorBlock:(void (^)(NSError *error)) errorBlock {
     [self.requestManager GET:[NSString stringWithFormat:@"%@/stamp/%@", BASE_URL, fileHash] parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        if(completionBlock)
-            completionBlock(responseObject);
+        if([responseObject isKindOfClass:[NSDictionary class]]) {
+            if(responseObject[@"err"]) {
+                errorBlock([StamperyTools generateErrorForString:@"Not a valid stamp" andErrorCode:1005]);
+
+            } else {
+                if(completionBlock)
+                    completionBlock([[Stamp alloc] initWithDictionary:responseObject]);
+            }
+        } else {
+            if(errorBlock)
+                errorBlock([StamperyTools generateErrorForString:@"Not a valid stamp" andErrorCode:1005]);
+        }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         if(errorBlock)
             errorBlock(error);

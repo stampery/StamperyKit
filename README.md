@@ -1,6 +1,6 @@
 # StamperyKit
 
-[![CI Status](http://img.shields.io/travis/Pablo Merino/StamperyKit.svg?style=flat)](https://travis-ci.org/Pablo Merino/StamperyKit)
+[![CI Status](http://img.shields.io/travis/stampery/StamperyKit.svg?style=flat)](https://travis-ci.org/stampery/StamperyKit)
 [![Version](https://img.shields.io/cocoapods/v/StamperyKit.svg?style=flat)](http://cocoapods.org/pods/StamperyKit)
 [![License](https://img.shields.io/cocoapods/l/StamperyKit.svg?style=flat)](http://cocoapods.org/pods/StamperyKit)
 [![Platform](https://img.shields.io/cocoapods/p/StamperyKit.svg?style=flat)](http://cocoapods.org/pods/StamperyKit)
@@ -9,7 +9,11 @@
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
-## Requirements
+## TODO
+
+- Tests. Tests. Tests!!
+- Caching
+- Persistence
 
 ## Installation
 
@@ -22,7 +26,7 @@ pod "StamperyKit"
 
 ## Author
 
-Pablo Merino, pablo.perso1995@gmail.com
+Pablo Merino, pablo@stampery.co
 
 ## License
 

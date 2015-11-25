@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "StamperyKit"
-  s.version          = "0.1.0"
+  s.version          = "0.1.1"
   s.summary          = "Stampery's Cocoa Library"
 
 # This description is used to generate tags and improve search results.
@@ -34,7 +34,7 @@ This is Stampery's Official Cocoa library.
     'StamperyKit' => ['Pod/Assets/*.png']
   }
 
-  # s.public_header_files = 'Pod/Classes/**/*.h'
+  s.public_header_files = 'Pod/Classes/**/*.h'
   s.dependency 'AFNetworking', '~> 2.3'
   s.dependency 'SSKeychain'
 end

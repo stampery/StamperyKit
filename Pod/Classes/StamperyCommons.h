@@ -7,7 +7,7 @@
 //
 
 #import <AFNetworking/AFNetworking.h>
-#import <CommonCrypto/CommonCrypto.h>
+#import <NSHash/NSData+NSHash.h>
 #import <SSKeychain/SSKeychain.h>
 #import "User.h"
 #import "Stamp.h"

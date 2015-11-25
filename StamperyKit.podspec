@@ -37,4 +37,5 @@ This is Stampery's Official Cocoa library.
   s.public_header_files = 'Pod/Classes/**/*.h'
   s.dependency 'AFNetworking', '~> 2.3'
   s.dependency 'SSKeychain'
+  s.dependency 'NSHash'
 end

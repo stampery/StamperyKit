@@ -1,6 +1,6 @@
 {
   "name": "StamperyKit",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "summary": "Stampery's Cocoa Library",
   "description": "This is Stampery's Official Cocoa library.",
   "homepage": "https://github.com/stampery/StamperyKit",
@@ -10,7 +10,7 @@
   },
   "source": {
     "git": "https://github.com/stampery/StamperyKit.git",
-    "tag": "0.1.1"
+    "tag": "0.1.2"
   },
   "social_media_url": "https://twitter.com/StamperyCo",
   "platforms": {
@@ -29,6 +29,9 @@
       "~> 2.3"
     ],
     "SSKeychain": [
+
+    ],
+    "NSHash": [
 
     ]
   }

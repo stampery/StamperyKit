@@ -85,11 +85,13 @@ strip_invalid_archs() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-StamperyKit_Tests/AFNetworking.framework"
+  install_framework "Pods-StamperyKit_Tests/NSHash.framework"
   install_framework "Pods-StamperyKit_Tests/SSKeychain.framework"
   install_framework "Pods-StamperyKit_Tests/StamperyKit.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-StamperyKit_Tests/AFNetworking.framework"
+  install_framework "Pods-StamperyKit_Tests/NSHash.framework"
   install_framework "Pods-StamperyKit_Tests/SSKeychain.framework"
   install_framework "Pods-StamperyKit_Tests/StamperyKit.framework"
 fi

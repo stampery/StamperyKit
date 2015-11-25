@@ -10,10 +10,7 @@
 
 @implementation StamperyHashing
 + (NSString*) sha256OfData:(NSData*) data {
-    uint8_t digest[CC_SHA256_DIGEST_LENGTH] = {0};
-    CC_SHA256(data.bytes, (CC_LONG)data.length, digest);
-    NSData *outData = [NSData dataWithBytes:digest length:CC_SHA256_DIGEST_LENGTH];
-    NSString *hash = [outData description];
+    NSString *hash = [[data SHA256] description];
     hash = [hash stringByReplacingOccurrencesOfString:@" " withString:@""];
     hash = [hash stringByReplacingOccurrencesOfString:@"<" withString:@""];
     hash = [hash stringByReplacingOccurrencesOfString:@">" withString:@""];

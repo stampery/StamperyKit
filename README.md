@@ -80,11 +80,27 @@ NSString *nameString = @"John Doe";
 NSString *stampHash = @"xxx-xxx-xxx";
 
 [[StamperyKit sharedInstance] detailsForStampHash:stampHash completion:^(id response) {
-	// response has an nsa
+	// response has an instance of Stamp, containing the specified stamp info
 } errorBlock:^(NSError *error) {
-
+	// error contains the raised error
 }];
 ```
+
+**Stamping**
+This part will change eventually to make the library less opinionated. For now you can only stamp a file, by creating a `PreStamp` instance
+
+```objc
+PreStamp *preStamp = [[PreStamp alloc] ...];
+BOOL backupStamp = YES;
+
+[[StamperyKit sharedInstance] stampFile:preStamp backupFile:backupStamp completion:^(id response) {
+	// response contains the server response
+} errorBlock:^(NSError *error) {
+	// error contains the raised error
+}];
+```
+
+*These are the basic methods to start using basic functionality. Check StamperyKit.h for the full list of methods*
 ## Author
 
 Pablo Merino, pablo@stampery.co

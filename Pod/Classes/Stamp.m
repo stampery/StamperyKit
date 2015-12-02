@@ -38,6 +38,7 @@
     
     self.txId = stampProof[@"txid"];
     self.stored = (BOOL)[stampData[@"stored"] boolValue];
+    self.proofHash = stampProof[@"hash"];
     
     self.attributeDictionary = stamp;
     return self;

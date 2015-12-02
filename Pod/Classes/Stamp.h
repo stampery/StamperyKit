@@ -32,6 +32,7 @@ typedef enum : NSUInteger {
 @property(nonatomic, strong) NSString *shortId;
 @property(nonatomic) BOOL stored;
 @property(nonatomic, strong) NSString *txId;
+@property(nonatomic, strong) NSString *proofHash;
 
 @property(nonatomic, strong) NSDictionary *attributeDictionary;
 

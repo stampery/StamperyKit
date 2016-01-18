@@ -18,7 +18,7 @@
 #import "StamperyHashing.h"
 
 #define PRODUCTION_V1_BASE_URL @"https://stampery.co/api/v1"
-#define BASE_URL @"https://stampery.com/api/v2"
+#define BASE_URL @"https://api.stampery.com/v2"
 
 #define TOKEN_NAME @"Stampery iOS App"
 

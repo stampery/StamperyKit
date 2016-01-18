@@ -19,7 +19,6 @@
     
     dispatch_once(&once, ^{
         sharedInstance = [[self alloc] init];
-        self.retries = 3;
     });
     
     return sharedInstance;
@@ -29,7 +28,7 @@
     self = [super init];
     
     if(self) {
-        
+        self.retries = 3;
         self.queue = [[NSOperationQueue alloc] init];
         
         self.requestManager = [AFHTTPRequestOperationManager manager];

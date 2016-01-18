@@ -55,8 +55,22 @@
 //
 // Method to sign a file
 //
+
 -(void) stampFile:(PreStamp*)preStamp backupFile:(BOOL)backup completion:(void (^)(id response)) completionBlock errorBlock:(void (^)(NSError *error)) errorBlock {
-    
+    if(self.retries <= 0) {
+        if(errorBlock)
+            return errorBlock([StamperyTools generateErrorForString:@"Error requesting the server" andErrorCode:1010]);
+    } else {
+        [self internalStampFile:preStamp backupFile:backup completion:^(id response) {
+            if(completionBlock)
+                return completionBlock(response);
+        } errorBlock:^(NSError *error) {
+            self.retries--;
+        }];
+    }
+}
+
+-(void) internalStampFile:(PreStamp*)preStamp backupFile:(BOOL)backup completion:(void (^)(id response)) completionBlock errorBlock:(void (^)(NSError *error)) errorBlock {
     if(self.userSession) {
         [self.requestManager.requestSerializer setValue:[StamperyTools generateAuthenticationHeaderForToken:[self.userSession userToken]] forHTTPHeaderField:@"Authorization"];
         NSError *jsonError;

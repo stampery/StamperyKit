@@ -14,6 +14,7 @@
 @property(nonatomic,strong) Profile *userProfile;
 @property(nonatomic,strong) AFHTTPRequestOperationManager *requestManager;
 @property(nonatomic,strong) NSOperationQueue *queue;
+@property(nonatomic) int retries;
 
 +(instancetype) sharedInstance;
 

@@ -14,11 +14,13 @@
 @property(nonatomic,strong) Profile *userProfile;
 @property(nonatomic,strong) AFHTTPRequestOperationManager *requestManager;
 @property(nonatomic,strong) NSOperationQueue *queue;
-@property(nonatomic) int retries;
+
 
 +(instancetype) sharedInstance;
 
--(void) stampFile:(PreStamp*)preStamp backupFile:(BOOL)backup completion:(void (^)(id response)) completionBlock errorBlock:(void (^)(NSError *error)) errorBlock;
+-(void) stampFile:(PreStamp*)preStamp backupFile:(BOOL)backup completion:(void (^)(id response)) completionBlock errorBlock:(void (^)(NSError *error)) errorBlock retries:(int)retriesLeft;
+
+-(void) internalStampFile:(PreStamp*)preStamp backupFile:(BOOL)backup completion:(void (^)(id response)) completionBlock errorBlock:(void (^)(NSError *error)) errorBlock;
 
 -(void) detailsForStampHash:(NSString*) fileHash completion:(void (^)(id response)) completionBlock errorBlock:(void (^)(NSError *error)) errorBlock;
 

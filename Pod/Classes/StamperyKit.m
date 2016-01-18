@@ -28,7 +28,6 @@
     self = [super init];
     
     if(self) {
-        self.retries = 3;
         self.queue = [[NSOperationQueue alloc] init];
         
         self.requestManager = [AFHTTPRequestOperationManager manager];
@@ -56,18 +55,17 @@
 // Method to sign a file
 //
 
--(void) stampFile:(PreStamp*)preStamp backupFile:(BOOL)backup completion:(void (^)(id response)) completionBlock errorBlock:(void (^)(NSError *error)) errorBlock {
-    if(self.retries <= 0) {
+-(void) stampFile:(PreStamp*)preStamp backupFile:(BOOL)backup completion:(void (^)(id response)) completionBlock errorBlock:(void (^)(NSError *error)) errorBlock retries:(int)retriesLeft {
+    if(retriesLeft <= 0) {
         if(errorBlock)
             return errorBlock([StamperyTools generateErrorForString:@"Error requesting the server" andErrorCode:1010]);
     } else {
         [self internalStampFile:preStamp backupFile:backup completion:^(id response) {
             if(completionBlock) {
-                self.retries = 3;
                 return completionBlock(response);
             }
         } errorBlock:^(NSError *error) {
-            self.retries--;
+            [self stampFile:preStamp backupFile:backup completion:completionBlock errorBlock:errorBlock retries:retriesLeft - 1];
         }];
     }
 }

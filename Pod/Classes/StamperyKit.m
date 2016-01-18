@@ -19,6 +19,7 @@
     
     dispatch_once(&once, ^{
         sharedInstance = [[self alloc] init];
+        self.retries = 3;
     });
     
     return sharedInstance;
@@ -62,8 +63,10 @@
             return errorBlock([StamperyTools generateErrorForString:@"Error requesting the server" andErrorCode:1010]);
     } else {
         [self internalStampFile:preStamp backupFile:backup completion:^(id response) {
-            if(completionBlock)
+            if(completionBlock) {
                 return completionBlock(response);
+                self.retries = 3;
+            }
         } errorBlock:^(NSError *error) {
             self.retries--;
         }];

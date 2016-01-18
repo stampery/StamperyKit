@@ -63,8 +63,8 @@
     } else {
         [self internalStampFile:preStamp backupFile:backup completion:^(id response) {
             if(completionBlock) {
-                return completionBlock(response);
                 self.retries = 3;
+                return completionBlock(response);
             }
         } errorBlock:^(NSError *error) {
             self.retries--;

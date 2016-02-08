@@ -27,7 +27,19 @@
     self.fileName = stampData[@"name"];
     self.fileSize = [stampData[@"size"] integerValue];
     self.merkleIndex = [stampProof[@"merkleIndex"] integerValue];
-    self.stampHash = stampData[@"hash"];
+    
+    if(!stamp[@"email"]) {
+        self.email = NO;
+    } else {
+        self.email = YES;
+    }
+    
+    if(!stampData[@"hash"]) {
+        self.stampHash = stampProof[@"hash"];
+    } else {
+        self.stampHash = stampData[@"hash"];
+    }
+    
     self.merkleRoot = stampProof[@"merkleRoot"];
     self.merkleSiblings = stampProof[@"merkleSiblings"];
     if([stampProof[@"pending"] isEqual:[NSNull null]]) {

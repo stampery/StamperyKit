@@ -31,6 +31,7 @@ typedef enum : NSUInteger {
 @property(nonatomic) BOOL pending;
 @property(nonatomic, strong) NSString *shortId;
 @property(nonatomic) BOOL stored;
+@property(nonatomic) BOOL email;
 @property(nonatomic, strong) NSString *txId;
 @property(nonatomic, strong) NSString *proofHash;
 
